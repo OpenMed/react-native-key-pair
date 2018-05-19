@@ -40,7 +40,7 @@ public class RNKeyPairModule extends ReactContextBaseJavaModule {
         String key64 = new String(Base64.encode(packed, 0));
 
         Arrays.fill(packed, (byte) 0);
-        return "-----BEGIN PRIVATE KEY-----\n" + key64 + "\n-----END PRIVATE KEY-----";
+        return "-----BEGIN PRIVATE KEY-----\n" + key64 + "-----END PRIVATE KEY-----";
     }
 
 
@@ -50,7 +50,7 @@ public class RNKeyPairModule extends ReactContextBaseJavaModule {
                 X509EncodedKeySpec.class);
         return "-----BEGIN PUBLIC KEY-----\n" +
                 new String(Base64.encode(spec.getEncoded(), 0)) +
-                "\n-----END PUBLIC KEY-----";
+                "-----END PUBLIC KEY-----";
     }
 
     @ReactMethod
